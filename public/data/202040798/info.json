@@ -1,0 +1,19 @@
+{
+    "nombre": "Juan Guerrero",
+    "edad": 23,
+    "carrera": "Ing. de sistemas",
+    "semestre": 6,
+    "gustos": [
+        "comer",
+        "Cine",
+        "voleibol",
+        "Cocinar"
+    ],
+    "noGustos": [
+        "Despertarse temprano",
+        "Comida acida",
+        "la comida china",
+        "Tareas largas"
+    ],
+    "foto": "https://lh3.googleusercontent.com/a/ACg8ocLRtqS5xecCYqZfZHC4z8RwYFi6jo26YyozkLQddjhJhOyOwIXI=s576-c-no"
+}
