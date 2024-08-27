@@ -1,0 +1,9 @@
+{
+    "nombre": "Oscar Cuaical",
+    "edad": 19,
+    "carrera": "Ingenieria de sistemas",
+    "semestre": 6,
+    "gustos": ["Lectura", "Deportes", "Futbol", "Cine"],
+    "noGustos": ["Despertarse temprano", "Dormir muy tarde"],
+    "foto": "https://www.univalle.edu.co/media/k2/items/cache/9845d3c220e6e5674241ce626189d694_M.jpg"
+}
