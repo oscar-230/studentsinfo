@@ -1,4 +1,4 @@
-// Cargar el módulo de archivos del sistema (fs) para leer el archivo JSON
+//Leer el archivo json
 const fs = require('fs');
 const path = require('path');
 
@@ -13,7 +13,7 @@ beforeAll(() => {
   infoData = JSON.parse(jsonData);
 });
 
-// Definir las pruebas unitarias
+// Se define la prueba unitaria
 describe('Validar contenido del archivo info.json', () => {
   
   // Verificar que el campo 'nombre' existe y no está vacío
