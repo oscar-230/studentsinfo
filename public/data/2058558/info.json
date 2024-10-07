@@ -1,0 +1,10 @@
+{
+    "nombre": "Néstor David Heredia",
+    "edad": 22,
+    "carrera": "Ingeniería de Sistemas",
+    "semestre": 6,
+    "gustos": ["Musica", "Futbol", "Juegos", "Viajar", "Deportivo Cali"],
+    "noGustos": ["Las personas mentirosas", "Ruido fuerte", "Tareas largas"],
+    "foto": "https://lh3.googleusercontent.com/a/ACg8ocKEZeG84o-BUXr4VQn-0CTfbFl-4tU4q1KPYgeKRitSPHvHeBhdTw=s360-c-no",
+    "redSocial": "https://www.instagram.com/heredia_711/"
+}  

@@ -1,70 +1,63 @@
 const fs = require('fs');
 const path = require('path');
 
-// Ruta al directorio que contiene todas las carpetas con info.json
-const baseDir = path.join(__dirname, '../../public/data');
+// Directorio que contiene las carpetas con los archivos info.json
+const dataDir = path.join(__dirname, '../../public/data');
 
-//validar el contenido de un archivo JSON
-function validarJsonCompleto(infoData) {
-  // Verificar que el campo 'nombre' existe y no está vacío
-  expect(infoData).toHaveProperty('nombre');
-  expect(infoData.nombre).not.toBe('');
+describe('Validar contenido de los archivos info.json en todas las carpetas', () => {
+    // Lee todas las carpetas dentro de public/data/
+    fs.readdirSync(dataDir).forEach(folder => {
+        const infoPath = path.join(dataDir, folder, 'info.json');
 
-  // Verificar que el campo 'edad' existe y es un número
-  expect(infoData).toHaveProperty('edad');
-  expect(typeof infoData.edad).toBe('number');
+        if (fs.existsSync(infoPath)) {
+            let infoData;
 
-  // Verificar que el campo 'carrera' existe y no está vacío
-  expect(infoData).toHaveProperty('carrera');
-  expect(infoData.carrera).not.toBe('');
+            beforeAll(() => {
+                const jsonData = fs.readFileSync(infoPath, 'utf8');
+                infoData = JSON.parse(jsonData);
+            });
 
-  // Verificar que el campo 'semestre' existe y es un número
-  expect(infoData).toHaveProperty('semestre');
-  expect(typeof infoData.semestre).toBe('number');
+            describe(`Validar info.json en la carpeta ${folder}`, () => {
+                test('Debe existir el campo "nombre" y no debe estar vacío', () => {
+                    expect(infoData).toHaveProperty('nombre');
+                    expect(infoData.nombre).not.toBe('');
+                });
 
-  // Verificar que el campo 'gustos' existe y es un array
-  expect(infoData).toHaveProperty('gustos');
-  expect(Array.isArray(infoData.gustos)).toBe(true);
+                test('Debe existir el campo "edad" y debe ser un número', () => {
+                    expect(infoData).toHaveProperty('edad');
+                    expect(typeof infoData.edad).toBe('number');
+                });
 
-  // Verificar que el campo 'noGustos' existe y es un array
-  expect(infoData).toHaveProperty('noGustos');
-  expect(Array.isArray(infoData.noGustos)).toBe(true);
+                test('Debe existir el campo "carrera" y no debe estar vacío', () => {
+                    expect(infoData).toHaveProperty('carrera');
+                    expect(infoData.carrera).not.toBe('');
+                });
 
-  // Verificar que el campo 'foto' existe y no está vacío
-  expect(infoData).toHaveProperty('foto');
-  expect(infoData.foto).not.toBe('');
+                test('Debe existir el campo "semestre" y debe ser un número', () => {
+                    expect(infoData).toHaveProperty('semestre');
+                    expect(typeof infoData.semestre).toBe('number');
+                });
 
-  // Verificar que el campo 'redSocial' existe y no está vacío
-  expect(infoData).toHaveProperty('redSocial');
-  expect(infoData.redSocial).not.toBe('');
-}
+                test('Debe existir el campo "gustos" y debe ser un array', () => {
+                    expect(infoData).toHaveProperty('gustos');
+                    expect(Array.isArray(infoData.gustos)).toBe(true);
+                });
 
-// Obtener todas las subcarpetas del directorio
-const carpetas = fs.readdirSync(baseDir).filter((file) => {
-  return fs.statSync(path.join(baseDir, file)).isDirectory();
-});
+                test('Debe existir el campo "noGustos" y debe ser un array', () => {
+                    expect(infoData).toHaveProperty('noGustos');
+                    expect(Array.isArray(infoData.noGustos)).toBe(true);
+                });
 
-// Recorre todas las carpetas y ejecuta la prueba en cada una
-describe('Validar archivos info.json en todas las carpetas', () => {
-  carpetas.forEach((carpeta) => {
-    const infoPath = path.join(baseDir, carpeta, 'info.json');
+                test('Debe existir el campo "foto" y no debe estar vacío', () => {
+                    expect(infoData).toHaveProperty('foto');
+                    expect(infoData.foto).not.toBe('');
+                });
 
-    // Solo ejecutar si el archivo info.json existe en la carpeta
-    if (fs.existsSync(infoPath)) {
-      let infoData;
-
-      // Leer el archivo JSON antes de la prueba
-      beforeAll(() => {
-        const jsonData = fs.readFileSync(infoPath, 'utf8');
-        infoData = JSON.parse(jsonData);
-      });
-
-      // Ejecutar las mismas validaciones para cada archivo info.json
-      describe(`Validar archivo info.json en la carpeta ${carpeta}`, () => {
-        test('Validar que el archivo JSON esté completo', () => {
-          validarJsonCompleto(infoData);
-        });
-      });
-    }
-  });
+                test('Debe existir el campo "redSocial" y no debe estar vacío', () => {
+                    expect(infoData).toHaveProperty('redSocial');
+                    expect(infoData.redSocial).not.toBe('');
+                });
+            });
+        }
+    });
 });
