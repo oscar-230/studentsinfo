@@ -5,5 +5,6 @@
     "semestre": 6,
     "gustos": ["Dormir", "Cine", "Música", "Videojuegos", "Comida"],
     "noGustos": ["Despertarse temprano", "Comida fría", "Ruido fuerte"],
-    "foto": "https://i.pinimg.com/474x/c1/3f/6b/c13f6b88890e5f6651d04db53ff40a66.jpg"
+    "foto": "https://i.pinimg.com/474x/c1/3f/6b/c13f6b88890e5f6651d04db53ff40a66.jpg",
+    "redSocial": "https://www.instagram.com/cdcrisxx/"  
 }
