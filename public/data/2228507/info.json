@@ -1,0 +1,10 @@
+{
+    "nombre": "Kevin Jordan ALzate",
+    "edad": 20,
+    "carrera": "Ingenieria de Sistemas",
+    "semestre": 6,
+    "gustos": ["Futbol", "Videojuegos", "La plata", "Salir con Amigos", "Comer"],
+    "noGustos": ["Madrugar", "Pedalear hasta la U", "Que la gente grite"],
+    "foto": "https://lh3.googleusercontent.com/a/ACg8ocI2wt-inska9Q4eEEhWtDFz1qv0TZ9-_w78i5S9hM2IX07ITs0IDg=s288-c-no",
+    "redSocial": "https://www.instagram.com/kevinjordan_lz19/"
+}
